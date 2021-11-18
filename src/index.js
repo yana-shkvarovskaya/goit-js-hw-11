@@ -38,7 +38,7 @@ function onSearch(e) {
       }
       Notify.info(`Hooray! We found ${data.totalHits} images.`);
       appendHitsMarkup(data.hits);
-      smoothScroll();
+      // smoothScroll();
       lightbox.refresh();
       refs.loadMoreBtn.classList.remove('visually-hidden');
       lastPageOfResults(data.totalHits);
@@ -52,6 +52,7 @@ function onLoadMore() {
     .then(data => {
         appendHitsMarkup(data.hits);
         lightbox.refresh();
+        smoothScroll ()
     });
 }
 
@@ -106,7 +107,7 @@ function smoothScroll () {
   .firstElementChild.getBoundingClientRect();
 
 window.scrollBy({
-  top: cardHeight * 2,
+  top: cardHeight * 12,
   behavior: "smooth",
 });
 }

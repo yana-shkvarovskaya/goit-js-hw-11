@@ -117,6 +117,10 @@ justify-content: center;
 
 }
 
+.load-more-btn:hover{
+    background-color: #151e74;
+}
+
 .visually-hidden{
     display: none;
 }
