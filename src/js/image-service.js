@@ -7,14 +7,14 @@ export default class ImagesApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
-    this.per_page = 40;
+ 
   }
 
 
   async fetchImages() {
    const url = `${BASE_URL}?key=${API_KEY}&q=${this.searchQuery}
    &image_type=photo&orientation=horizontal&safesearch=true
-   &page=${this.page}&per_page=${this.per_page}`;
+   &page=${this.page}&per_page=40`;
 
     try {
         const resp = await axios.get(url);
@@ -42,21 +42,21 @@ export default class ImagesApiService {
     this.page = 1;
   }
 
- async fetchImage(){
-    try {
-      const url2 = `${BASE_URL}?key=${API_KEY}&q=${this.searchQuery}
-      &image_type=photo&orientation=horizontal&safesearch=true
-      &page=${this.page}&per_page=${this.per_page}`;
+//  async fetchImage(){
+//     try {
+//       const url2 = `${BASE_URL}?key=${API_KEY}&q=${this.searchQuery}
+//       &image_type=photo&orientation=horizontal&safesearch=true
+//       &page=${this.page}&per_page=${this.per_page}`;
    
-      const resp = await axios.get(url2);
-      this.incrementPage();
-        return resp.data.hits;
-        // console.log(resp.data.hits);
-      }
-        catch (error) {
-            return error;
-        }
-  }
+//       const resp = await axios.get(url2);
+//       this.incrementPage();
+//         return resp.data.hits;
+//         // console.log(resp.data.hits);
+//       }
+//         catch (error) {
+//             return error;
+//         }
+//   }
 
   }
 
